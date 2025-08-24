@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exemplo de uma página HTML com um conteúdo semelhante a um portal de notícias">
+	  
+  <title>Portal de Notícias</title>
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Se for usar CSS externo:
+
+  <style>
+    /* Estilo mínimo só para leitura confortável durante o exercício */
+    :root { --max:1100px; }
+    * { box-sizing: border-box; }
+    body { margin: 100; font-family: system-ui, Arial, sans-serif; line-height: 1.6; }
+    header, nav, main, footer { padding: 1rem; }
+    header { background:#222; color:#fff; }
+    .container { max-width: var(--max); margin: 100 auto; }
+    nav ul { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; gap: .75rem; flex-wrap: wrap; }
+    nav a { color:#5A5A5A; text-decoration: bold; }
+    nav a:hover, nav a:focus { text-decoration: underline; }
+    h1, h2, h3 { margin: .5rem 0; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    article { border: 1px solid #e5e5e5; border-radius: 8px; background:#fff; overflow: hidden; }
+    article header { padding: .75rem 1rem; background:#f7f7f7; }
+    article .content { padding: 1rem; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; height: auto; }
+    .topo { position: fixed; right: 1rem; bottom: 1rem; background:#222; color:#fff; border-radius:999px; padding:.5rem .75rem; text-decoration: none; }
+    footer { background:#f7f7f7; }
+    .contatos ul { list-style: none; padding: 0; }
+    .redes ul { list-style: none; padding: 0; display: flex; gap: .5rem; flex-wrap: wrap; }
+    .redes img { width: 28px; height: 28px; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+  </style>
+    -->
+</head>
+<body>
+
+  <!-- Barra de navegação.
+       Deveria estar presente em todo o site -->
+  <nav>
+    <a href="http://www.puc-rio.br" title="PUC-Rio">PUC-Rio</a> |
+    <a href="https://www.cce.puc-rio.br/" title="CCEC">CCEC</a> |
+    <a href="https://www.inf.puc-rio.br/" title="Departamento de Informática da PUC-Rio">DI</a> |
+    <a href="index.html">Home-Page</a>
+  </nav>
+
+  <!-- Cabeçalho da página – também deveria ser igual em todo o site -->
+  <header id="topo">
+    <h1>Meu Portal de Notícias</h1>
+    <img src="images/logo_puc.png" alt="Logotipo da PUC-Rio">
+  </header>
+
+  <!-- Texto inicial -->
+  <h2 id="home">Página principal</h2>
+  <p>Este texto ilustra a área principal do site</p>
+
+  <!-- Lista de últimas notícias -->
+  
+  
+  <!-- Lista de últimas notícias -->
+<section aria-labelledby="ultimas">
+  <h3 id="ultimas">Últimas notícias</h3>
+  <p>Confira os destaques do dia e navegue direto para a editoria desejada.</p>
+
+  <!-- Navegação rápida entre editorias -->
+  <nav class="news-nav" aria-label="Navegação por editorias">
+    <a href="#politica">🗳️ Política</a>
+    <a href="#esporte">🏟️ Esporte</a>
+    <a href="#cultura">🎭 Cultura</a>
+    <a href="#tecnologia">💡 Tecnologia</a>
+  </nav>
+
+  <ul class="news-list">
+    <li class="news-item">
+      <a class="news-icon" href="#politica" aria-hidden="true">
+        <img src="images/icon-global.png" alt="" />
+      </a>
+      <div class="news-text">
+        <a class="news-title" href="#politica">Reforma política avança na câmara</a>
+        <p class="news-summary">Relatório preliminar propõe mudanças em regras eleitorais e financiamento; debate segue para audiências públicas.</p>
+      </div>
+    </li>
+
+    <li class="news-item">
+      <a class="news-icon" href="#esporte" aria-hidden="true">
+        <img src="images/icon-sport.png" alt="" />
+      </a>
+      <div class="news-text">
+        <a class="news-title" href="#esporte">Final emocionante define campeão nacional</a>
+        <p class="news-summary">Decisão termina nos acréscimos com virada histórica e recorde de público no estádio.</p>
+      </div>
+    </li>
+
+    <li class="news-item">
+      <a class="news-icon" href="#cultura" aria-hidden="true">
+        <img src="images/icon-film.png" alt="" />
+      </a>
+      <div class="news-text">
+        <a class="news-title" href="#cultura">Mostra celebra clássicos do cinema</a>
+        <p class="news-summary">Festival traz cópias restauradas e debates com críticos sobre obras que marcaram gerações.</p>
+      </div>
+    </li>
+
+    <li class="news-item">
+      <a class="news-icon" href="#tecnologia" aria-hidden="true">
+        <img src="images/icon-tec.png" alt="" />
+      </a>
+      <div class="news-text">
+        <a class="news-title" href="#tecnologia">Novo chip promete salto em IA embarcada</a>
+        <p class="news-summary">Arquitetura otimizada reduz consumo e acelera inferência em dispositivos móveis e embarcados.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+  
+  
+  
+  
+  <!--<section>
+    <h3>Últimas notícias</h3>
+    <p>Uma lista das notícias mais recentes</p>
+    <ul>
+      <li>
+        <a href="#politica"><img src="images/icone.png" alt="ícone"></a>
+        <a href="#politica">Notícia número 1</a>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </li>
+      <li>
+        <a href="#esporte"><img src="images/icone.png" alt="ícone"></a>
+        <a href="#esporte">Notícia número 2</a>
+        <p>Aliquid minus a facere</p>
+      </li>
+      <li>
+        <a href="#cultura"><img src="images/icone.png" alt="ícone"></a>
+        <a href="#cultura">Notícia número 3</a>
+        <p>Nisi quaerat optio qui reprehenderit perspiciatis</p>
+      </li>
+      <li>
+        <a href="#tecnologia"><img src="images/icon-tec.png" alt="ícone"></a>
+        <a href="#tecnologia">Notícia número 4</a>
+        <p>Fugit iste iure ipsam tempora consectetur</p>
+      </li>
+    </ul>
+  </section> -->
+
+  <!-- Uma notícia (um artigo) -->
+  <section>
+    <h3>Uma notícia (um artigo)</h3>
+
+    <article id="politica" lang="pt">
+      <h4>Política</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aliquam cumque esse aut est iusto id, ipsam consequatur quis quia quibusdam aspernatur. Vel, voluptatibus porro! Ipsa unde consequatur labore voluptate.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima optio aut beatae voluptate quos sed qui veniam molestiae, aliquam, non deserunt facere provident repellat numquam commodi exercitationem maxime?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quia magna iure, in molestiae magni animi consequatur quos dolores eos, non labore architecto sintem tempore consequatur omnis, facere repellendus?</p>
+      <p><a href="#topo">Topo</a></p>
+    </article>
+
+    <article id="esporte" lang="pt">
+      <h4>Esporte</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio possimus nulla magni nesciunt vel cumque impedit earum fugit, minima qui ducimus culpa. Aut vel adipisci dolores culpa veritatis illo eum.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cum earum quod quidem necessitatibus aliquid. Repellendus quos earum est quam! Illum, modi cumque sint possimus accusamus natus atque in maiores nulla.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates numquam architecto repellat iste, libero blanditiis, harum nobis maiores voluptate, dicta ipsam qui natus! Molestiae harum id ex natus nobis?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostro tempora nobis ea nulla molestiae recusandae tempore, magni quidem accusantium in. Assumenda laboriosam totam officiis ut nisi fugit sapiente rem iure culpa.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis officiis minima tenetur facere provident facilis iusto alias, quos earum ratione ullam, libero officiis aut nisi voluptatem eius fugiat?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est facere id voluptas, similique praesentium repellendus cum sequi dolor eveniet nam maiores distinctio libero nihil itaque accusamus maiores quos sint aut enim.</p>
+      <p><a href="#topo">Topo</a></p>
+    </article>
+
+    <article id="cultura" lang="pt">
+      <h4>Cultura</h4>
+      <p>Lorem ipsum dolor sit amet, quo aperiam architecto perspiciatis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas esse nisi inventore? Molestiae assumenda culpa debitis ad fugit quam repellat, praesentium, qui, quasi os omnis perferendis. Odio possimus veritatis dolor?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nisi incidunt fugiat eum veniam unde eligendi! Laboriosam dignissimos eos alias accusamus, nemo rerum eveniet quis pariatur totam vitae!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo inventore nisi quaerat. Maiores nam nihil autem numquam cupiditate libero. Libero repudiandae, officia explicabo eveniet alias ea omnis doloremque?</p>
+      <p><a href="#topo">Topo</a></p>
+    </article>
+
+    <article id="tecnologia" lang="pt">
+      <h4>Tecnologia</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur deleniti sapiente non earum consectetur nostrum pariatur facilis illum. Amet quisquam iure magni alias nulla ipsam odit nobis voluptate specie quis?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aut eligendi unde ducimus quidem facere tempore porro repellendus fuga voluptatum, nihil vitae! Exerpturi dicta quos maxime consequatur sit similique possimus?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nulla ut exercitationem perspiciatis, ex voluptatibus nihil, voluptas modi quos autem obcaecati dolores, maiores aut eum, tempore.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati dolore, nulla reiciendis necessitatibus nostrum perferendis ea omnis distinctio consequatur eius doloribus velit ullam vitae magni maiores natus. Fugit!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ea quam, consectetur culpa nemo quo asperiores ipsam, tenetur repellat, blanditiis quis officia? Quisquam asperiores delectus fugiat molestiae.</p>
+      <p><a href="#topo">Topo</a></p>
+    </article>
+  </section>
+
+  <!-- Rodapé da página -->
+  <!-- seria uma boa ideia colocar em todas as páginas -->
+  <footer>
+    <h2>Nome Pomposo para o Nosso Site</h2>
+
+    <div class="endereco">
+      <h3>Endereço</h3>
+      <p>Rua Sobe e Desce – número que desaparece</p>
+      <p>Rio de Janeiro, RJ – Brasil</p>
+      <p>CEP 22123-456 – Caixa Postal 12345</p>
+    </div>
+
+    <div class="contato">
+      <h3>Contatos:</h3>
+      <ul>
+        <li>Telefone: (21) 5555-1234</li>
+        <li>Fax: (21) 5555-2345</li>
+        <li>Telex: 123456</li>
+        <li>Email: contato@exemplo.com.br</li>
+      </ul>
+      
+      
+            <section class="redes" aria-labelledby="tit-redes">
+        <h3 id="tit-redes">Siga nas redes</h3>
+        <ul>
+        
+        <li><a href="https://discord.com/" aria-label="Discord">
+            <img src="images/discord.png" alt="Discord"></a></li>
+            
+          <li><a href="https://facebook.com/" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook"></a></li>
+            
+          <li><a href="https://x.com/" aria-label="Twitter/X">
+            <img src="images/twitter.png" alt="Twitter (X)"></a></li>
+            
+          <li><a href="https://instagram.com/" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram"></a></li>
+            
+          <li><a href="https://youtube.com/" aria-label="YouTube">
+            <img src="images/youtube.png" alt="YouTube"></a></li>
+            
+          <li><a href="https://whatsapp.com/" aria-label="WhatsApp">
+            <img src="images/whatsapp.png" alt="WhatsApp"></a></li>
+            
+            <li><a href="https://tiktok.com/" aria-label="Tiktok">
+            <img src="images/tiktok.png" alt="TikTok"></a></li>
+            
+             <li><a href="https://linkedin.com/" aria-label="linkedin">
+            <img src="images/linkedin.png" alt="linkedin"></a></li>
+            
+             <li><a href="https://telegram.org/" aria-label="telegram">
+            <img src="images/telegram.png" alt="Telegram"></a></li>
+            
+             <li><a href="https://pinterest.com/" aria-label="Pinterest">
+            <img src="images/pinterest.png" alt="Pinterest"></a></li>
+            
+             <li><a href="https://reddit.com/" aria-label="Reddit">
+            <img src="images/reddit.png" alt="Reddit"></a></li>
+            
+        </ul>
+      </section>
+
+    </div>
+
+ <!--    <div class="social-media">
+      <img src="images/logo_puc.png" alt="Logotipo da PUC-Rio">
+      <img src="images/discord.png" alt="Discord">
+      <img src="images/facebook.png" alt="Facebook">
+      <img src="images/instagram.png" alt="Instagram">
+      <img src="images/linkedin.png" alt="LinkedIn">
+      <img src="images/pinterest.png" alt="Pinterest">
+      <img src="images/reddit.png" alt="Reddit">
+      <img src="images/telegram.png" alt="Telegram">
+      <img src="images/tiktok.png" alt="TikTok">
+      <img src="images/whatsapp.png" alt="WhatsApp">
+      <img src="images/x.png" alt="X">
+      <img src="images/youtube.png" alt="YouTube">
+    </div> -->
+  </footer>
+
+</body>
+</html>
