@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whac-A-Mole — One Page</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+
+    /* complementos só para a navegação one-page, como só é uma pagina sem risco */
+
+    /* rolamento suave e margem para ancoragem */
+        html { scroll-behavior: smooth; }
+        :target { scroll-margin-top: 12px; }
+        .spacer { height: 12px; }
+
+    /* limita a largura máxima e centraliza */
+    .onepage { max-width: var(--max); margin: 0 auto; }
+
+    
+    /*.nav-arrow.prev img { transform: rotate(-90deg); }  seta virada p/ a esquerda */
+    /* orientação visual das setas */
+    .nav-arrow img { display:inline-block; vertical-align:middle; width:16px; height:auto; }    
+    .nav-left  img { transform: rotate(-90deg); }  /* ícone vira para a esquerda */
+    .nav-right img { transform: rotate( 90deg); }  /* ícone vira para a direita */
+     
+        /* evita que o cabeçalho “grude” no topo após o clique, se quiser:  referencia dada por chat*/
+    @media (prefers-reduced-motion:no-preference){
+      :target { scroll-margin-top: 12px; }
+    }
+    /* fim dos complementos para navegação one-page */
+  </style>
+</head>
+<body id="topo" class="onepage">
+
+  <!-- ========================== HOME ========================== -->
+  <section id="sec-home">
+    <header id="header-home" class="site-header">
+      <div class="container">
+        <h1 class="brand">Whac-A-Mole</h1>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <!-- menu aponta para os IDs de HEADER das seções -->
+          <a href="#header-home">Home</a> |
+          <a href="#header-regras">Regras</a> |
+          <a href="#header-tabuleiro">O Jardim</a> |
+          <a href="#header-recordes">Recordes</a>
+
+            <!-- direita = próxima seção (down) → Regras -->
+            <a href="#header-regras" class="nav-arrow nav-right" aria-label="Próxima seção">
+            <img src="images/arrow-up.png" alt="Próxima">
+            </a>
+            </nav>
+
+            <!-- next (próxima seção) - mudado
+                <a href="#header-regras" class="nav-arrow" aria-label="Ir para Regras">
+                <img src="images/arrow-up.png" alt="Seta" class="arrow arrow--right arrow--small">
+                </a>
+            </nav> -->
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="secao">
+        <div class="banner">
+          <img src="images/Whac-A-Mole.jpg" alt="Imagem do jogo físico">
+        </div>
+      </section>
+    </main>
+        <!-- FOOTER (Home) -->
+    <footer id="footer-home" class="site-footer">
+      <div class="container">
+        <p>© 2025 — Whac-A-Mole</p>
+
+                <!-- FOOTER (Home) -->
+
+        <a href="#header-recordes" class="nav-arrow nav-left"  aria-label="Seção acima">  <!-- wrap para a última -->
+        <img src="images/arrow-up.png" alt="Anterior">
+        </a>
+        <a href="#header-regras"   class="nav-arrow nav-right" aria-label="Próxima seção">
+        <img src="images/arrow-up.png" alt="Próxima">
+        </a>
+
+        <!-- previous: volta para o footer da última seção; next: vai ao header da próxima modificado
+        <a href="#footer-recordes" class="nav-arrow prev" aria-label="Página anterior">
+          <img src="images/arrow-up.png" alt="Anterior" class="arrow arrow--small">
+        </a>
+        <a href="#header-regras" class="nav-arrow" aria-label="Próxima página">
+          <img src="images/arrow-up.png" alt="Próxima" class="arrow arrow--right arrow--small"> -->
+        </a>
+      </div>
+    </footer>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- ========================== REGRAS ========================== -->
+  <section id="sec-regras">
+    <header id="header-regras" class="site-header">
+      <div class="container">
+        <h2 class="brand">Regras</h2>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#header-home">Home</a> |
+          <a href="#header-regras">Regras</a> |
+          <a href="#header-tabuleiro">O Jardim</a> |
+          <a href="#header-recordes">Recordes</a>
+          <a href="#header-tabuleiro" class="nav-arrow" aria-label="Ir para o Tabuleiro">
+            <img src="images/arrow-up.png" alt="Seta" class="arrow arrow--right arrow--small">
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="secao" id="regras">
+        <h3>Regras do Jogo</h3>
+        <ul>
+          <li>Acerte a toupeira quando ela aparecer no buraco.</li>
+          <li>Ganhe pontos por cada acerto.</li>
+          <li>O tempo é limitado, então seja rápido!</li>
+        </ul>
+        <img src="images/toupeira2.jpg" alt="Desenho dos jogadores">
+      </section>
+
+      <section class="secao">
+        <div class="contentBox">
+          <h3 class="heading">Regras simples do jogo</h3>
+          <p class="text">
+            Bater nas toupeiras que se acendem para atingir a pontuação máxima
+            antes do fim do tempo. Em modelos para 2 jogadores, cada um bate nas
+            toupeiras da sua cor; se a toupeira do meio acender na sua cor, vale
+            bônus. O jogo estimula concentração, atenção e coordenação olho-mão.
+          </p>
+
+          <h3 class="heading">Regras detalhadas</h3>
+          <h4>Objetivo</h4>
+          <ul>
+            <li>Modo 1 jogador: acertar as toupeiras; a do meio concede bônus.</li>
+            <li>Modo 2 jogadores: cada um observa as suas toupeiras; a do meio na
+              sua cor dá bônus.</li>
+            <li>Pontuação: revelada no console quando o tempo acaba.</li>
+            <li>Duração: tempo limitado; fim ao zerar cronômetro.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-regras" class="site-footer">
+      <div class="container">
+        <p>© 2025 — Whac-A-Mole</p>
+        <a href="#footer-home" class="nav-arrow prev" aria-label="Página anterior">
+          <img src="images/arrow-up.png" alt="Anterior" class="arrow arrow--small">
+        </a>
+        <a href="#header-tabuleiro" class="nav-arrow" aria-label="Próxima página">
+          <img src="images/arrow-up.png" alt="Próxima" class="arrow arrow--right arrow--small">
+        </a>
+      </div>
+    </footer>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- ========================== TABULEIRO ========================== -->
+  <section id="sec-tabuleiro">
+    <header id="header-tabuleiro" class="site-header">
+      <div class="container">
+        <h2 class="brand">O Jardim (Tabuleiro)</h2>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#header-home">Home</a> |
+          <a href="#header-regras">Regras</a> |
+          <a href="#header-tabuleiro">O Jardim</a> |
+          <a href="#header-recordes">Recordes</a>
+          <a href="#header-recordes" class="nav-arrow" aria-label="Ir para Recordes">
+            <img src="images/arrow-up.png" alt="Seta" class="arrow arrow--right arrow--small">
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="game-area secao">
+        <!-- Tabuleiro central (tabela p/ posicionamento, 2-2-1) -->
+        <div class="board">
+          <table class="holes" aria-label="Tabuleiro do jogo">
+            <tbody>
+              <tr>
+                <td class="hole-cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco0"></td>
+                <td></td>
+                <td class="hole-cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco1"></td>
+              </tr>
+              <tr>
+                <td class="hole-cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco2"></td>
+                <td></td>
+                <td class="hole-cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco3"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="hole-cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco4"></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Placar (dígitos sem espaço entre <img>) -->
+        <div class="pontos">
+          <table class="tabela score" aria-label="Placar">
+            <thead>
+              <tr><th colspan="2">PONTUAÇÃO</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ACERTOS:</td>
+                <td id="acertos" class="pontuacao">
+                  <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+                </td>
+              </tr>
+              <tr>
+                <td>PERDIDOS:</td>
+                <td id="perdidos" class="pontuacao">
+                  <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+                </td>
+              </tr>
+              <tr>
+                <td>ERRADOS:</td>
+                <td id="errados" class="pontuacao">
+                  <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+                </td>
+              </tr>
+              <tr>
+                <td>SALDO:</td>
+                <td id="saldo" class="pontuacao">
+                  <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" style="text-align:center;">
+                  <button id="start" class="btn btn-light" type="button">START</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-tabuleiro" class="site-footer">
+      <div class="container">
+        <p>© 2025 — Whac-A-Mole</p>
+        <a href="#footer-regras" class="nav-arrow prev" aria-label="Página anterior">
+          <img src="images/arrow-up.png" alt="Anterior" class="arrow arrow--small">
+        </a>
+        <a href="#header-recordes" class="nav-arrow" aria-label="Próxima página">
+          <img src="images/arrow-up.png" alt="Próxima" class="arrow arrow--right arrow--small">
+        </a>
+      </div>
+    </footer>
+  </section>
+
+  <div class="spacer"></div>
+
+  <!-- ========================== RECORDES ========================== -->
+  <section id="sec-recordes">
+    <header id="header-recordes" class="site-header">
+      <div class="container">
+        <h2 class="brand">Recordes</h2>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <a href="#header-home">Home</a> |
+          <a href="#header-regras">Regras</a> |
+          <a href="#header-tabuleiro">O Jardim</a> |
+          <a href="#header-recordes">Recordes</a>
+          <a href="#header-home" class="nav-arrow" aria-label="Ir para Home">
+            <img src="images/arrow-up.png" alt="Seta" class="arrow arrow--right arrow--small">
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="recordes" class="secao">
+        <h3>Recordes — Top 10</h3>
+        <div class="table-wrap">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Colocação</th>
+                <th>Nome</th>
+                <th>Pontos</th>
+                <th>Data</th>
+                <th>Foto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>Asterix</td><td>512</td><td>20/07/2019</td><td><img src="images/asterix.jpg" alt="Asterix" width="30" height="40"></td></tr>
+              <tr><td>2</td><td>Obelix</td><td>265</td><td>01/01/2002</td><td><img src="images/obelix.jpg" alt="Obelix" width="30" height="40"></td></tr>
+              <tr><td>3</td><td>Panoramix</td><td>108</td><td>26/06/2009</td><td><img src="images/panoramix.jpg" alt="Panoramix" width="30" height="40"></td></tr>
+              <tr><td>4</td><td>Falbala</td><td>64</td><td>02/04/2005</td><td><img src="images/falbala.jpg" alt="Falbala" width="30" height="40"></td></tr>
+              <tr><td>5</td><td>Chatorix</td><td>32</td><td>12/07/2010</td><td><img src="images/chatotorix.jpg" alt="Chatorix" width="30" height="40"></td></tr>
+              <tr><td>6</td><td>Ideafix</td><td>16</td><td>17/11/2014</td><td><img src="images/ideafix.jpg" alt="Ideafix" width="30" height="40"></td></tr>
+              <tr><td>7</td><td>Veteranix</td><td>8</td><td>12/11/2019</td><td><img src="images/veteranix.png" alt="Veteranix" width="30" height="40"></td></tr>
+              <tr><td>8</td><td>Naftalina</td><td>4</td><td>25/07/2018</td><td><img src="images/naftalina.jpg" alt="Naftalina" width="30" height="40"></td></tr>
+              <tr><td>9</td><td>Automatix</td><td>2</td><td>04/02/2004</td><td><img src="images/automatix.jpg" alt="Automatix" width="30" height="40"></td></tr>
+              <tr><td>10</td><td>Ielosubmarina</td><td>1</td><td>28/07/2019</td><td><img src="images/ielosubmarina.jpg" alt="Ielosubmarina" width="30" height="40"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer-recordes" class="site-footer">
+      <div class="container">
+        <p>© 2025 — Whac-A-Mole</p>
+        <a href="#footer-tabuleiro" class="nav-arrow prev" aria-label="Página anterior">
+          <img src="images/arrow-up.png" alt="Anterior" class="arrow arrow--small">
+        </a>
+        <a href="#header-home" class="nav-arrow" aria-label="Próxima página">
+          <img src="images/arrow-up.png" alt="Próxima" class="arrow arrow--right arrow--small">
+        </a>
+      </div>
+    </footer>
+  </section>
+
+</body>
+</html>
