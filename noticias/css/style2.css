@@ -1,0 +1,137 @@
+/* Base */
+:root{ --max:1100px; --line:#e6e6ea; }
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{ margin:0; font-family:system-ui, Arial, sans-serif; line-height:1.6; color:#222; background:#f5f5f7; }
+.container{ max-width:var(--max); margin:0 auto; padding:0 16px; }
+h1,h2,h3,h4{ margin:.5rem 0; }
+
+/* Topbar (faixa escura) */
+.topbar{ background:#2f2f30; }
+.topbar__inner{ padding:.6rem 0; }
+.topbar__menu{ list-style:none; display:flex; gap:1rem; margin:0; padding:0; }
+.topbar__menu a{ color:#d4d4d4; text-decoration:none; }
+.topbar__menu a:hover{ text-decoration:underline; }
+
+/* Header da página com logo à direita */
+.page-header{ background:#fff; }
+.page-header__inner{
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:24px 0;
+}
+.brand{ width:86px; height:auto; }
+
+/* Hero (duas colunas) */
+.hero{
+  display:grid; grid-template-columns: 1fr 1fr; gap:24px;
+  align-items:start; margin:20px 0 10px;
+}
+.hero__left .intro{ margin:8px 0 0; color:#555; }
+.hero__right h3{ text-align:center; margin:0 0 10px; }
+
+/* Lista cinza “Aqui você vai ler” */
+.reading-list{
+  list-style:none; padding:0; margin:0 auto; max-width:520px;
+  display:grid; gap:8px;
+}
+.reading-list a{
+  display:block; background:#ececec; border:1px solid var(--line); border-radius:6px;
+  padding:.6rem .8rem; color:#444; text-decoration:none;
+}
+.reading-list a:hover{ background:#e6e6e6; }
+
+/* Grid de notícias (2 colunas responsivo) */
+.news-grid{
+  display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:18px 0 32px;
+}
+@media (max-width:900px){ .news-grid{ grid-template-columns:1fr; } }
+
+/* Card básico */
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden;
+}
+.card__head{ background:#f3f3f3; padding:.75rem 1rem; }
+.card__content{ padding:1rem; }
+.card__content p{ margin:.6rem 0; }
+.to-top a{ color:#0b68b3; text-decoration:none; }
+.to-top a:hover{ text-decoration:underline; }
+
+/* Rodapé */
+.site-footer{ background:#f7f7f7; border-top:1px solid var(--line); }
+.site-footer .container{ padding:16px 16px 26px; }
+.footer-grid{
+  display:grid; grid-template-columns: 1fr 1fr 1fr; gap:24px; align-items:flex-start;
+}
+@media (max-width:900px){ .footer-grid{ grid-template-columns:1fr; } }
+.endereco p{ margin:.25rem 0; }
+.contato ul{ list-style:none; padding:0; margin:.25rem 0; }
+.redes ul{ list-style:none; padding:0; margin:.25rem 0; display:flex; flex-wrap:wrap; gap:.5rem; }
+.redes img{ width:28px; height:28px; }
+
+/* Botão “voltar ao topo” */
+.topo{
+  position:fixed; right:1rem; bottom:1rem; background:#2f2f30; color:#fff;
+  border-radius:999px; padding:.5rem .8rem; text-decoration:none; font-weight:600;
+}
+
+/* Acessibilidade */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); border:0;
+}
+/* ===== AJUSTES DE CENTRALIZAÇÃO E BORDAS ===== */
+
+/* largura máxima e centralização do conteúdo */
+:root { --max: 1100px; }           /* pode aumentar se quiser */
+.container { max-width: var(--max); margin: 0 auto; }
+
+/* seção "Aqui você vai ler" realmente centralizada */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+  justify-items: center;            /* centra os blocos na coluna */
+  margin: 24px 0 12px;
+}
+.hero__right { width: 100%; max-width: 520px; }  /* impede esticar demais */
+.reading-list a { background: #eee; border: 1px solid #cfcfd4; }
+
+/* grid de notícias: espaço externo e colunas */
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;                         /* “respiro” entre cards */
+  margin: 22px 0 36px;
+}
+@media (max-width: 900px) {
+  .news-grid { grid-template-columns: 1fr; }
+}
+
+/* CARDS COM BORDAS ESCURAS COMO NA CAPTURA */
+.card{
+  background: #fff;
+  border: 2px solid #76e4ec;         /* borda mais marcada */
+  border-radius: 0;                   /* canto reto como no gráfico */
+}
+.card__head{
+  background: #f6f6f6;
+  padding: .85rem 1rem;
+  border-bottom: 2px solid #eee529;   /* separação do título */
+}
+.card__content{ padding: 1rem; }
+.card__content p{ margin: .6rem 0; }
+
+/* “Topo” discreto no rodapé do card */
+.to-top { margin-top: .5rem; }
+.to-top a{
+  color: #0b68b3; text-decoration: none; font-weight: 600;
+}
+.to-top a:hover{ text-decoration: underline; }
+
+/* rodapé e topbar mantidos; só reforço a largura do container */
+.site-footer .container { padding: 16px 16px 26px; }
+.topbar__inner { padding: .6rem 0; }
+
+/* opcional: borda bem leve no bloco da direita do hero para lembrar a caixa cinza */
+.hero__right h3{ text-align: center; margin: 0 0 10px; }

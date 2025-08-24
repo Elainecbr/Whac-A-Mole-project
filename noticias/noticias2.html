@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exemplo de uma página HTML com um conteúdo semelhante a um portal de notícias">
+  <title>Portal de Notícias</title>
+  <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+
+  <!-- Barra de navegação (igual em todo o site) -->
+  <nav class="topbar">
+    <div class="container topbar__inner">
+      <ul class="topbar__menu" aria-label="atalhos institucionais">
+        <li><a href="http://www.puc-rio.br" title="PUC-Rio">PUC-Rio</a></li>
+        <li><a href="https://www.cce.puc-rio.br/" title="CCEC">CCEC</a></li>
+        <li><a href="https://www.inf.puc-rio.br/" title="Departamento de Informática da PUC-Rio">DI</a></li>
+        <li><a href="index.html">Home-Page</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cabeçalho -->
+  <header id="topo" class="page-header">
+    <div class="container page-header__inner">
+      <h1>Meu Portal de Notícias</h1>
+      <img class="brand" src="images/logo_puc.png" alt="Logotipo da PUC-Rio">
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / chamada central 
+    <section class="hero" aria-labelledby="ler">
+      <div class="hero__left">
+        <h2 id="home" class="sr-only">Página principal</h2>
+       <p class="intro">Este texto ilustra a área principal do site.</p> 
+      </div> -->
+           
+            
+
+    
+        <div alingn="center">
+               <h3 id="ler" > Aqui você vai ler:</h3>
+            </div>
+    
+      
+        <ul class="reading-list" aria-label="sumário da página">
+          <li><a href="#politica">Reforma política avança na câmara</a></li>
+          <li><a href="#esporte">Final emocionante define campeão nacional</a></li>
+          <li><a href="#cultura">Mostra celebra clássicos do cinema</a></li>
+          <li><a href="#tecnologia">Novo chip promete salto em IA embarcada</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Grid de notícias (2 colunas) -->
+    <section class="news-grid" aria-labelledby="noticias">
+      <h3 id="noticias" class="sr-only">Notícias</h3>
+
+      <!-- Card 1: Política -->
+      <article id="politica" class="card" lang="pt">
+        <header class="card__head">
+          <h4>Política</h4>
+        </header>
+        <div class="card__content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aliquam cumque esse aut est iusto id, ipsam consequatur quis quia quibusdam aspernatur. Vel, voluptatibus porro! Ipsa unde consequatur labore voluptate.</p>
+          <p>Fuga minima optio aut beatae voluptate quos sed qui veniam molestiae, aliquam, non deserunt facere provident repellat numquam commodi exercitationem maxime?</p>
+          <p>Exercitationem quia magna iure, in molestiae magni animi consequatur quos dolores eos, non labore architecto sintem tempore consequatur omnis, facere repellendus?</p>
+          <p class="to-top"><a href="#topo">Topo</a></p>
+        </div>
+      </article>
+
+      <!-- Card 2: Esporte -->
+      <article id="esporte" class="card" lang="pt">
+        <header class="card__head">
+          <h4>Esporte</h4>
+        </header>
+        <div class="card__content">
+          <p>Optio possimus nulla magni nesciunt vel cumque impedit earum fugit, minima qui ducimus culpa. Aut vel adipisci dolores culpa veritatis illo eum.</p>
+          <p>Praesentium cum earum quod quidem necessitatibus aliquid. Repellendus quos earum est quam! Illum, modi cumque sint possimus accusamus natus atque maiores.</p>
+          <p>Voluptates numquam architecto repellat iste, libero blanditiis, harum nobis maiores voluptate, dicta ipsam qui natus!</p>
+          <p>Nostro tempora nobis ea nulla molestiae recusandae tempore, magni quidem accusantium in. Assumenda laboriosam totam officiis ut nisi fugit sapiente rem.</p>
+          <p class="to-top"><a href="#topo">Topo</a></p>
+        </div>
+      </article>
+
+      <!-- Card 3: Cultura -->
+      <article id="cultura" class="card" lang="pt">
+        <header class="card__head">
+          <h4>Cultura</h4>
+        </header>
+        <div class="card__content">
+          <p>Lorem ipsum dolor sit amet, quo aperiam architecto perspiciatis. Voluptas esse nisi inventore? Molestiae assumenda culpa debitis ad fugit quam repellat, praesentium, qui, quasi omnis perferendis.</p>
+          <p>Nulla nisi incidunt fugiat eum veniam unde eligendi! Laboriosam dignissimos eos alias accusamus, nemo rerum eveniet quis pariatur totam vitae!</p>
+          <p>Quo inventore nisi quaerat. Maiores nam nihil autem numquam cupiditate libero. Libero repudiandae, officia explicabo eveniet alias ea omnis.</p>
+          <p class="to-top"><a href="#topo">Topo</a></p>
+        </div>
+      </article>
+
+      <!-- Card 4: Tecnologia -->
+      <article id="tecnologia" class="card" lang="pt">
+        <header class="card__head">
+          <h4>Tecnologia</h4>
+        </header>
+        <div class="card__content">
+          <p>Consequatur deleniti sapiente non earum consectetur nostrum pariatur facilis illum. Amet quisquam iure magni alias nulla ipsam odit nobis voluptate specie quis?</p>
+          <p>Consectetur aut eligendi unde ducimus quidem facere tempore porro repellendus fuga voluptatum, nihil vitae!</p>
+          <p>Inci­dunt nulla ut exercitationem perspiciatis, ex voluptatibus nihil, voluptas modi quos autem obcaecati dolores, maiores aut eum, tempore.</p>
+          <p>Obcaecati dolore, nulla reiciendis necessitatibus nostrum perferendis ea omnis distinctio consequatur eius doloribus velit ullam vitae magni maiores.</p>
+          <p class="to-top"><a href="#topo">Topo</a></p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <div class="container">
+      <h2>Nome Pomposo para o Nosso Site</h2>
+
+      <div class="footer-grid">
+        <div class="endereco">
+          <h3>Endereço</h3>
+          <p>Rua Sobe e Desce – número que desaparece</p>
+          <p>Rio de Janeiro, RJ – Brasil</p>
+          <p>CEP 22123-456 – Caixa Postal 12345</p>
+        </div>
+
+        <div class="contato">
+          <h3>Contatos:</h3>
+          <ul>
+            <li>Telefone: (21) 5555-1234</li>
+            <li>Fax: (21) 5555-2345</li>
+            <li>Telex: 123456</li>
+            <li>Email: contato@exemplo.com.br</li>
+          </ul>
+        </div>
+
+        <section class="redes" aria-labelledby="tit-redes">
+          <h3 id="tit-redes">Siga nas redes</h3>
+          <ul>
+            <li><a href="https://discord.com/" aria-label="Discord"><img src="images/discord.png" alt="Discord"></a></li>
+            <li><a href="https://facebook.com/" aria-label="Facebook"><img src="images/facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://x.com/" aria-label="Twitter/X"><img src="images/twitter.png" alt="Twitter (X)"></a></li>
+            <li><a href="https://instagram.com/" aria-label="Instagram"><img src="images/instagram.png" alt="Instagram"></a></li>
+            <li><a href="https://youtube.com/" aria-label="YouTube"><img src="images/youtube.png" alt="YouTube"></a></li>
+            <li><a href="https://whatsapp.com/" aria-label="WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp"></a></li>
+            <li><a href="https://tiktok.com/" aria-label="Tiktok"><img src="images/tiktok.png" alt="TikTok"></a></li>
+            <li><a href="https://linkedin.com/" aria-label="linkedin"><img src="images/linkedin.png" alt="linkedin"></a></li>
+            <li><a href="https://telegram.org/" aria-label="telegram"><img src="images/telegram.png" alt="Telegram"></a></li>
+            <li><a href="https://pinterest.com/" aria-label="Pinterest"><img src="images/pinterest.png" alt="Pinterest"></a></li>
+            <li><a href="https://reddit.com/" aria-label="Reddit"><img src="images/reddit.png" alt="Reddit"></a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#topo" class="topo" aria-label="Voltar ao topo">Topo ↑</a>
+</body>
+</html>

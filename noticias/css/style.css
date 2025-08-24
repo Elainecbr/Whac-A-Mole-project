@@ -1,0 +1,45 @@
+/* Estilo mínimo só para leitura confortável durante o exercício */
+    :root { --max:1100px; }
+    * { box-sizing: border-box; }
+    body { margin: 100; font-family: system-ui, Arial, sans-serif; line-height: 1.6; }
+    header, nav, main, footer { padding: 1rem; }
+    header { background:#222; color:#fff; }
+    .container { max-width: var(--max); margin: 100 auto; }
+    nav ul { list-style: none; padding: 0; margin: .5rem 0 0; display: flex; gap: .75rem; flex-wrap: wrap; }
+    nav a { color:#5A5A5A; text-decoration: bold; }
+    nav a:hover, nav a:focus { text-decoration: underline; }
+    h1, h2, h3 { margin: .5rem 0; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: 2fr 1fr; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    article { border: 1px solid #e5e5e5; border-radius: 8px; background:#fff; overflow: hidden; }
+    article header { padding: .75rem 1rem; background:#f7f7f7; }
+    article .content { padding: 1rem; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; height: auto; }
+    .topo { position: fixed; right: 1rem; bottom: 1rem; background:#222; color:#fff; border-radius:999px; padding:.5rem .75rem; text-decoration: none; }
+    footer { background:#f7f7f7; }
+    .contatos ul { list-style: none; padding: 0; }
+    .redes ul { list-style: none; padding: 0; display: flex; gap: .5rem; flex-wrap: wrap; }
+    .redes img { width: 28px; height: 28px; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+    /* ——— Últimas notícias ——— */
+.news-nav{
+  display:flex; gap:.75rem; flex-wrap:wrap;
+  margin:.25rem 0 1rem;
+}
+.news-nav a{
+  text-decoration:none; font-weight:600;
+  background:#f0f0f0; padding:.35rem .6rem; border-radius:999px;
+  color:#333;
+}
+.news-nav a:hover{ background:#e6e6e6; text-decoration:underline; }
+
+.news-list{ list-style:none; padding:0; margin:0; display:grid; gap:.75rem; }
+.news-item{ display:flex; gap:.75rem; align-items:flex-start; background:#fff;
+  border:1px solid #e6e6ea; border-radius:10px; padding:.75rem; }
+.news-icon img{ width:28px; height:28px; display:block; }
+.news-text{ display:flex; flex-direction:column; gap:.2rem; }
+.news-title{ font-weight:700; color:#0b68b3; text-decoration:none; }
+.news-title:hover{ text-decoration:underline; }
+.news-summary{ margin:0; color:#444; }
