@@ -2,6 +2,13 @@
 
 Projeto desenvolvido como primeiro trabalho da pos-graduacao da PUC-Rio, com evolucao de layout, organizacao de codigo e melhoria da experiencia de jogo.
 
+## Onde esta o site principal
+
+- Pasta principal no repositorio: [meu-site](meu-site)
+- Home local: [meu-site/index.html](meu-site/index.html)
+- Tabuleiro: [meu-site/tabuleiro.html](meu-site/tabuleiro.html)
+- Recordes: [meu-site/recordes.html](meu-site/recordes.html)
+
 ## Demo Online
 
 - Site publicado: https://acodmin.com/curso-exemplos/meu-site/index.html
