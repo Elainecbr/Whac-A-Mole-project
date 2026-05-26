@@ -36,7 +36,7 @@ Este projeto recria o jogo classico Whac-A-Mole em pagina web, com:
 
 ### Recordes
 
-![Recordes](docs/screenshots/recordes.png|)
+<img width="1032" height="819" alt="image" src="https://github.com/user-attachments/assets/7a103fd7-bef4-43ac-8cb2-af5c657c3551" />
 
 ## Funcionalidades
 
