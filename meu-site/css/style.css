@@ -5,6 +5,59 @@ html, body { margin:0; padding:0; }
 body{ font-family: system-ui, -apple-system, Arial, sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
 .container{ max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
 
+/* ===== Fundo animado: “fogos” com bolinhas coloridas ===== */
+.fireworks{
+  position: fixed;
+  inset: 0;
+  z-index: 0;                /* fica atrás do conteúdo */
+  pointer-events: none;      /* não bloqueia cliques do jogo */
+  overflow: hidden;
+}
+/* Cada .burst é uma “explosão” feita com várias bolinhas
+   usando box-shadow em 8 direções */
+.burst{
+  --size: 6px;         /* tamanho do ponto base */
+  --spread: 70px;      /* raio da explosão */
+  /* paleta pastel  — azul, vermelho, amarelo, verde, lilás, laranja */
+  --c1:#3b82f6; --c2:#ef4444; --c3:#f59e0b; --c4:#22c55e; --c5:#a855f7; --c6:#fb923c;
+
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  transform: translate(-50%,-50%) scale(.2);
+  opacity: 0;
+
+  /* o truque: vários pontos ao redor usando box-shadow */
+  box-shadow:
+    0 calc(-1*var(--spread)) 0 0 var(--c1),
+    calc(.5*var(--spread)) calc(-.866*var(--spread)) 0 0 var(--c2),
+    var(--spread) 0 0 0 var(--c3),
+    calc(.5*var(--spread)) calc(.866*var(--spread)) 0 0 var(--c4),
+    0 var(--spread) 0 0 var(--c5),
+    calc(-.5*var(--spread)) calc(.866*var(--spread)) 0 0 var(--c6),
+    calc(-1*var(--spread)) 0 0 0 var(--c2),
+    calc(-.5*var(--spread)) calc(-.866*var(--spread)) 0 0 var(--c3);
+
+  /* brilho suave nos pontinhos */
+  filter: drop-shadow(0 0 4px rgba(0,0,0,.15));
+
+  animation: explode 1.8s ease-out var(--delay) infinite;
+}
+
+/* Animação da explosão */
+@keyframes explode{
+  0%   { transform: translate(-50%,-50%) scale(.2); opacity: 0; }
+  10%  { opacity: 1; }
+  60%  { transform: translate(-50%,-50%) scale(1);   opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(1.25); opacity: 0; }
+}
+
+/* IMPORTANTE: garanta que seu conteúdo fique acima do z-index:0 do fundo */
+.site-header, .site-footer, .container, .game-area { position: relative; z-index: 1; }
+
 /* Header & Footer com gradiente amarelo -> verde -> vermelho */
 .site-header,
 .site-footer{
@@ -23,6 +76,9 @@ body{ font-family: system-ui, -apple-system, Arial, sans-serif; color:var(--text
 .secao{ padding:28px 0; }
 .banner img{ width:100%; height:auto; border-radius:var(--radius); display:block; }
 
+/* tabela - ainda vou fazer*/
+
+
 /* Seta (usa images/arrow-up.png) */
 .arrow{ display:inline-block; vertical-align:middle; }
 .arrow--right{ transform: rotate(90deg); }
@@ -32,6 +88,117 @@ body{ font-family: system-ui, -apple-system, Arial, sans-serif; color:var(--text
 /* (Opcional) botão/link simples se precisar reutilizar */
 .btn-link{ display:inline-block; padding:8px 14px; border-radius:6px; background:#222; color:#fff; text-decoration:none; }
 .btn-link:hover{ filter:brightness(0.9); }
+
+.btn-ghost {
+  background: #ffffff;
+  color: #1d5727;
+  border: 1px solid #9fd57a;
+}
+
+.home-page {
+  padding-bottom: 24px;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.hero-tag {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1d5727;
+  margin-bottom: 10px;
+}
+
+.home-hero-content h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.home-hero-content p {
+  margin-top: 14px;
+  margin-bottom: 0;
+  max-width: 60ch;
+}
+
+.hero-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.highlight-card {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+}
+
+.highlight-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #134519;
+}
+
+.rules-page {
+  padding-bottom: 22px;
+}
+
+.rules-hero {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.rules-image {
+  max-width: 100%;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 18px rgba(0,0,0,.06);
+}
+
+.rules-list {
+  padding-left: 20px;
+}
+
+.rules-list.compact {
+  margin-bottom: 0;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.rule-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #ececec;
+  box-shadow: 0 8px 18px rgba(0,0,0,.05);
+  padding: 14px;
+}
+
+.rule-card h3 {
+  margin-top: 0;
+  color: #124718;
+}
 
 .game-area {
   display: flex;
@@ -114,3 +281,366 @@ body{ font-family: system-ui, -apple-system, Arial, sans-serif; color:var(--text
 .arrow{ display:inline-block; vertical-align:middle; }
 .arrow--right{ transform: rotate(90deg); }
 .arrow--small{ width:16px; height:auto; }
+
+
+
+/* ===== Incrementos visuais e animações ===== */
+
+/* Cursor de martelo durante o jogo */
+
+body.hammer-cursor {
+   
+  cursor: url("../images/hammer.png") 0 0, auto;
+
+    
+  /*cursor: url("images/hammerDown2.png") 0 0, auto;*/
+
+}
+
+/* Botão START — estados e animação */
+#start {
+  font-size: 1.2rem;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 2px solid #e4572e;
+  background: #ffffff;
+  color: #e4572e;
+  font-weight: 800;
+  letter-spacing: .5px;
+  transition: transform .12s ease, box-shadow .2s ease, background .3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  cursor: pointer;
+}
+#start:hover { transform: translateY(-2px); }
+#start:active { transform: translateY(0); }
+
+#start.running {
+  background: #d00000;  /* vermelho durante o jogo */
+  border-color: #a00000;
+  color: #fff;
+}
+
+/* Avisa quando o tempo está acabando: pisca suave */
+@keyframes blink {
+  0%, 49% { filter: brightness(1); }
+  50%, 100% { filter: brightness(1.25); }
+}
+#start.almost-over {
+  animation: blink .6s linear infinite;
+}
+
+/* Células dos buracos “preparadas” para abrigar a toupeira */
+.hole-cell {
+  position: relative; /* permite posicionar a toupeira absoluta */
+  width: 140px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* A toupeira */
+.mole {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-62%); /* ajusta para ficar “dentro” do buraco */
+  width: 120px;                 /* ajuste conforme sua arte */
+  height: auto;
+  pointer-events: none;         /* clique é na célula */
+  opacity: 0;
+  transition: opacity .08s linear, transform .08s ease;
+}
+.mole.show {
+  opacity: 1;
+  transform: translate(-50%,-68%); /* sobe um pouquinho ao aparecer */
+}
+
+/* Placar (só reforço leve) */
+.score {
+  min-width: 320px;
+  background: #f4ffe6;
+  border: 2px solid #98d85b;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.05);
+}
+.score thead th {
+  padding: 6px 0;
+}
+
+/*  área deco da mascote*/
+/* Botão PARAR */
+.btn-stop{
+  font-size: 1.05rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  border: 2px solid #444;
+  color: #fff;
+  background: #666;
+  cursor: not-allowed;
+  transition: filter .2s ease, transform .12s ease;
+}
+.btn-stop.enabled{
+  background: #222;
+  border-color: #000;
+  cursor: pointer;
+}
+.btn-stop.enabled:hover{ filter: brightness(1.1); transform: translateY(-2px); }
+.btn-stop.enabled:active{ transform: translateY(0); }
+
+/* Área da mascotinha (abaixo da tabela) */
+.mascot-area{
+  position: relative;
+  height: 220px;              /* altura reservada para a animação */
+  margin-top: 10px;
+  overflow: hidden;           /* esconde quando está fora da área */
+  /* opcional: um fundinho bem sutil */
+  background: #f9ffe8; border-radius: 8px;  
+}
+
+/* A imagem da toupeira que vai entrar em diagonal */
+.mascot-mole{
+  position: absolute;
+  bottom: 0;
+  right: -140px;              /* começa fora da área, pela direita */
+  width: 220px;
+  height: auto;
+  transform-origin: 50% 100%;
+  opacity: 0;
+
+  /* anima a cada 10s; pausa quando o jogo não está rodando */
+  animation: mascot-diagonal 10s ease-in-out infinite;
+  animation-play-state: paused; /* padrão: pausado */
+}
+
+/* Quando o jogo estiver rodando, o body recebe a classe .game-running */
+body.game-running .mascot-mole{
+  animation-play-state: running;
+}
+
+/* Keyframes: fica oculto a maior parte do tempo.
+   Entre 80% e 94% entra e sai em diagonal para a esquerda, com leve inclinação. */
+@keyframes mascot-diagonal{
+  0%, 78%{
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+    right: -140px;
+  }
+  80%{
+    opacity: 1;
+    right: -10px;
+    transform: translate(-10px, -12px) rotate(-12deg);
+  }
+  88%{
+    opacity: 1;
+    right: 65px;                       /* “pousa” um instante já visível */
+    transform: translate(-80px, -22px) rotate(-16deg);
+  }
+
+ 89%{
+    opacity: 1;
+    right: 65px;                       /* “pousa” um instante já visível */
+    transform: translate(-80px, -22px) rotate(-16deg);
+  }
+
+  90%{
+    opacity: 1;
+    right: 65px;                       /* “pousa” um instante já visível */
+    transform: translate(-80px, -22px) rotate(-16deg);
+  }
+
+  94%{
+    opacity: 0;
+    right: 200px;                      /* continua para a esquerda e some */
+    transform: translate(-220px, -34px) rotate(-18deg);
+  }
+ 
+
+  100%{
+    opacity: 0;
+    right: -140px;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* ===== Recordes ===== */
+.records-page {
+  padding-bottom: 26px;
+}
+
+.records-hero {
+  padding-bottom: 12px;
+}
+
+.records-hero p {
+  max-width: 760px;
+  margin-bottom: 0;
+}
+
+.records-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.records-table-panel,
+.records-side-panel {
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+.records-tools {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.records-tools label {
+  font-weight: 700;
+}
+
+.records-tools select,
+.score-form input,
+.score-form select {
+  border: 1px solid #d2d2d2;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.records-table caption {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.records-table th,
+.records-table td {
+  padding: 10px;
+  border-bottom: 1px solid #efefef;
+  text-align: left;
+}
+
+.records-table thead th {
+  background: #f8fbf1;
+  color: #1d5727;
+  position: sticky;
+  top: 0;
+}
+
+.records-table tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}
+
+.records-table tbody tr:hover {
+  background: #f4fde7;
+}
+
+.records-table img {
+  width: 36px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #d6d6d6;
+}
+
+.score-form {
+  display: grid;
+  gap: 8px;
+}
+
+.score-form label {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.score-form .btn-link {
+  margin-top: 8px;
+  border: 0;
+  cursor: pointer;
+}
+
+.records-stats {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.stat-card {
+  background: #f8fbf1;
+  border: 1px solid #e5efd4;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.88rem;
+  color: #4c4c4c;
+}
+
+.stat-card strong {
+  font-size: 1.4rem;
+  color: #113e17;
+}
+
+.btn-danger {
+  background: #aa2121;
+}
+
+.btn-danger:hover {
+  filter: brightness(1.08);
+}
+
+@media (max-width: 980px) {
+  .home-hero,
+  .rules-hero,
+  .records-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .highlights,
+  .rules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banner {
+    order: -1;
+  }
+
+  .records-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .highlights,
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .records-tools {
+    align-items: stretch;
+  }
+
+  .records-tools label {
+    width: 100%;
+  }
+
+  .records-table th,
+  .records-table td {
+    padding: 8px 6px;
+    font-size: 0.92rem;
+  }
+}

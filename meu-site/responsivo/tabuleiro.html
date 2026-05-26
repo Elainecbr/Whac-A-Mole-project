@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabuleiro do Jogo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+ <!-- <script src="javascript/tabuleiro.js"></script>  mudei o nome esta no final -->
+<body id="topo">
+
+  <!-- Fundo animado tipo fogos (não interfere em cliques) -->
+  <div class="fireworks" aria-hidden="true">
+    <!-- se pode ajustar as posições (x,y) e delays -->
+    <span class="burst" style="--x:18%; --y:28%; --delay:0s;"></span>
+    <span class="burst" style="--x:72%; --y:24%; --delay:.6s;"></span>
+    <span class="burst" style="--x:50%; --y:14%; --delay:1.1s;"></span>
+    <span class="burst" style="--x:30%; --y:70%; --delay:1.7s;"></span>
+    <span class="burst" style="--x:80%; --y:68%; --delay:2.2s;"></span>
+    <span class="burst" style="--x:12%; --y:85%; --delay:2.8s;"></span>
+  </div>
+  <!-- ... resto da página (header, main etc.) ... -->
+
+
+  <!-- Cabeçalho com menu -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Whac-A-Mole</h1>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html">Home</a> |
+        <a href="regras.html">Regras</a> |
+        <a href="tabuleiro.html">O Jardim</a> |
+        <a href="recordes.html">Recordes</a>
+        <a href="recordes.html" class="nav-arrow" aria-label="Ir para Recordes">
+          <img src="images/arrow-up.png" alt="Seta" class="arrow arrow--right arrow--small" />
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="game-area secao">
+      <!-- Tabuleiro central -->
+      <div class="board">
+        <div class="board">
+          <div class="holes-grid" aria-label="Tabuleiro do jogo">
+          <div class="cell"><img src="images/hole.png" alt="buraco vazio" class="hole"    id="buraco0"></div>
+          <div class="cell"></div>
+         <div class="cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco1"></div>
+
+         <div class="cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco2"></div>
+          <div class="cell"></div>
+        <div class="cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco3"></div>
+
+        <div class="cell"></div>
+        <div class="cell"><img src="images/hole.png" alt="buraco vazio" class="hole" id="buraco4"></div>
+    <div class="cell"></div>
+  </div>
+</div>
+      </div>
+
+      <!-- Área de pontuação -->
+      <div class="pontos">
+        <table class="tabela score">
+          <thead>
+            <tr><th colspan="2">PONTUAÇÃO</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ACERTOS:</td>
+              <td id="acertos" class="pontuacao">
+                <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+              </td>
+            </tr>
+            <tr>
+              <td>PERDIDOS:</td>
+              <td id="perdidos" class="pontuacao">
+                <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+              </td>
+            </tr>
+            <tr>
+              <td>ERRADOS:</td>
+              <td id="errados" class="pontuacao">
+                <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+              </td>
+            </tr>
+            <tr>
+              <td>SALDO:</td>
+              <td id="saldo" class="pontuacao">
+                <img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0"><img src="images/caractere_0.gif" alt="0">
+              </td>
+            </tr>
+            <!-- <tr>
+              <td colspan="2" style="text-align:center;">
+                <button id="start" class="btn btn-light" type="button">START</button>
+              </td>
+            </tr> -->
+           
+            <tr>
+              <td colspan="2" style="text-align:center; gap:8px;">
+                <button id="start" class="btn btn-light" type="button">START</button>
+               <button id="stop" class="btn btn-stop" type="button" disabled>PARAR</button>
+            </td>
+          </tr>
+        
+      
+          </tbody>
+        </table>
+        <!-- Mascote animada (aparece a cada 10s) -->
+<div class="mascot-area" aria-hidden="true">
+  <img src="images/segundos2.png" alt="" class="mascot-mole">
+</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 — Whac-A-Mole</p>
+      <a href="recordes.html" class="nav-arrow" aria-label="Ir para Recordes">
+        <img src="images/arrow-up.png" alt="Seta" class="arrow arrow--right arrow--small" />
+      </a>
+    </div>
+  </footer>
+
+  <script src="javascript/jogo.js"></script>
+</body>
+</html>

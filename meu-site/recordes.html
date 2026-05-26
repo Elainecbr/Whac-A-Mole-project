@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Whac-A-Mole - Meu Jogo</title>
+  <title>Whac-A-Mole | Recordes</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body id="topo">
-  <!-- TOPO com gradiente -->
   <header class="site-header">
     <div class="container">
       <h1 class="brand">Whac-A-Mole</h1>
       <nav class="main-nav" aria-label="Navegação principal">
-        <a href="index.html">Jogo</a> |
-        <a href="#recordes">Recordes</a> |
+        <a href="index.html">Home</a> |
         <a href="regras.html">Regras</a> |
-        <a href="tabuleiro.html">Tabuleiro</a> |
-        <!-- Seta para navegação -->
+        <a href="tabuleiro.html">O Jardim</a> |
+        <a href="recordes.html">Recordes</a>
         <a href="#recordes" class="nav-arrow" aria-label="Ir para recordes">
           <img src="images/arrow-up.png" alt="Seta" class="arrow arrow--right arrow--small">
         </a>
@@ -24,125 +22,80 @@
     </div>
   </header>
 
-  <main class="container">
-    <!-- JOGO -->
-    <section id="home" class="secao">
-      <h2>Bem-vindo ao Whac-A-Mole</h2>
-      <p>Prepare-se para o desafio: acerte o máximo de toupeiras possível antes que o tempo acabe!</p>
+  <main class="container records-page">
+    <section class="secao records-hero">
+      <h2>Painel de Recordes</h2>
+      <p>
+        Ranking oficial do jogo. As pontuações salvas no tabuleiro entram automaticamente aqui.
+        Voce tambem pode cadastrar resultados manualmente para demonstracoes e testes.
+      </p>
     </section>
 
-    <!-- RECORDES -->
-    <section id="recordes" class="secao">
-      <h2>Recordes - Top 10</h2>
-      <div class="table-wrap">
-        <table class="tabela">
-          <thead>
-            <tr>
-              <th>Colocação</th>
-              <th>Nome</th>
-              <th>Pontos</th>
-              <th>Data</th>
-              <th>Foto</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td><td>Asterix</td><td>512</td><td>20/07/2019</td>
-              <td><img src="images/asterix.jpg" alt="Asterix" width="30" height="40"></td>
-            </tr>
-            <tr>
-              <td>2</td><td>Obelix</td><td>265</td><td>01/01/2002</td>
-              <td><img src="images/obelix.jpg" alt="Obelix" width="30" height="40"></td>
-            </tr>
-            <!-- Continue a lista com os demais jogadores -->
-             <tr>
-            <td>3</td>
-            <td>Panoramix</td>
-            <td>108</td>
-            <td>26/06/2009</td>
-            <td><img src="images/panoramix.jpg" alt="Foto de Panoramix" width="30" height="40" /></td>
-          </tr>
+    <section id="recordes" class="secao records-layout" aria-label="Ranking de pontuacoes">
+      <div class="records-table-panel">
+        <div class="records-tools" role="group" aria-label="Ferramentas de ranking">
+          <label for="sortBy">Ordenar por:</label>
+          <select id="sortBy">
+            <option value="score">Maior pontuacao</option>
+            <option value="recent">Mais recente</option>
+            <option value="name">Nome (A-Z)</option>
+          </select>
+          <button id="clearRanking" class="btn-link btn-danger" type="button">Limpar ranking</button>
+        </div>
 
-          <tr>
-            <td>4</td>
-            <td>Falbala</td>
-            <td>64</td>
-            <td>02/04/2005</td>
-            <td><img src="images/falbala.jpg" alt="Foto de Falbala" width="30" height="40" /></td>
-          </tr>
-
-          <tr>
-            <td>5</td>
-            <td>Chatorix</td>
-            <td>32</td>
-            <td>12/07/2010</td>
-            <td><img src="images/chatotorix.jpg" alt="Foto de Chatorix" width="30" height="40" /></td>
-          </tr>
-
-          <tr>
-            <td>6</td>
-            <td>Ideafix</td>
-            <td>16</td>
-            <td>17/11/2014</td>
-            <td><img src="images/ideafix.jpg" alt="Foto de Ideafix" width="30" height="40" /></td>
-          </tr>
-
-          <tr>
-            <td>7</td>
-            <td>Veteranix</td>
-            <td>8</td>
-            <td>12/11/2019</td>
-            <td><img src="images/veteranix.png" alt="Foto de Veteranix" width="30" height="40" /></td>
-          </tr>
-
-          <tr>
-            <td>8</td>
-            <td>Naftalina</td>
-            <td>4</td>
-            <td>25/07/2018</td>
-            <td><img src="images/naftalina.jpg" alt="Foto de Naftalina" width="30" height="40" /></td>
-          </tr>
-
-          <tr>
-            <td>9</td>
-            <td>Automatix</td>
-            <td>2</td>
-            <td>04/02/2004</td>
-            <td><img src="images/automatix.jpg" alt="Foto de Automatix" width="30" height="40" /></td>
-          </tr>
-
-          <tr>
-            <td>10</td>
-            <td>Ielosubmarina</td>
-            <td>1</td>
-            <td>28/07/2019</td>
-            <td><img src="images/ielosubmarina.jpg" alt="Foto de Ielosubmarina" width="30" height="40" /></td>
-          </tr>
-
-          </tbody>
-        </table>
+        <div class="table-wrap">
+          <table class="tabela records-table">
+            <caption>Top 10 jogadores</caption>
+            <thead>
+              <tr>
+                <th>Colocação</th>
+                <th>Nome</th>
+                <th>Pontos</th>
+                <th>Data</th>
+                <th>Foto</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboardBody"></tbody>
+          </table>
+        </div>
       </div>
-    </section>
 
-    <!-- REGRAS -->
-    <section id="regras" class="secao">
-      <h2>Regras do Jogo</h2>
-      <ul>
-        <li>Acerte a toupeira quando ela aparecer no buraco.</li>
-        <li>Ganhe pontos por cada acerto.</li>
-        <li>O tempo é limitado, então seja rápido!</li>
-      </ul>
-    </section>
+      <aside class="records-side-panel" aria-label="Formulario e estatisticas">
+        <h3>Adicionar pontuacao</h3>
+        <form id="scoreForm" class="score-form">
+          <label for="playerName">Nome</label>
+          <input id="playerName" name="playerName" type="text" maxlength="20" required>
 
-    <!-- TABULEIRO -->
-    <section id="tabuleiro" class="secao">
-      <h2>Tabuleiro</h2>
-      <p>Acesse a página do tabuleiro para jogar:</p>
-      <a href="tabuleiro.html" class="btn-link">Ir para o tabuleiro</a>
+          <label for="playerScore">Pontos</label>
+          <input id="playerScore" name="playerScore" type="number" min="0" max="999" required>
+
+          <label for="playerDate">Data</label>
+          <input id="playerDate" name="playerDate" type="date" required>
+
+          <label for="playerAvatar">Avatar</label>
+          <select id="playerAvatar" name="playerAvatar"></select>
+
+          <button class="btn-link" type="submit">Salvar no ranking</button>
+        </form>
+
+        <div class="records-stats" aria-live="polite">
+          <div class="stat-card">
+            <span class="stat-label">Melhor pontuacao</span>
+            <strong id="bestScore">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Jogadores no ranking</span>
+            <strong id="totalPlayers">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Media geral</span>
+            <strong id="averageScore">0</strong>
+          </div>
+        </div>
+      </aside>
     </section>
   </main>
 
-  <!-- RODAPÉ -->
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 — Whac-A-Mole</p>
@@ -151,5 +104,7 @@
       </a>
     </div>
   </footer>
+
+  <script src="javascript/recordes.js"></script>
 </body>
 </html>

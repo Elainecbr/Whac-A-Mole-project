@@ -23,43 +23,45 @@
     </div>
   </header>
 
-  <main class="container">
-
-    <!-- REGRAS -->
-    <section id="regras" class="secao">
-      <h2>Regras do Jogo</h2>
-      <ul>
-        <li>Acerte a toupeira quando ela aparecer no buraco.</li>
-        <li>Ganhe pontos por cada acerto.</li>
-        <li>O tempo é limitado, então seja rápido!</li>
-      </ul>
-      <img src="images/toupeira2.jpg" alt="Desenho do jogadores">
-    </section>
-    <section class="secao">
-      <div class="contentBox">
-        <h2 class="heading">Regras simples do Jogo</h2>
-        <p class="text">
-          As regras mais específicas do Whack-A-Mole são: bater nas
-           toupeiras que se acendem, com o objetivo de atingir a 
-           pontuação máxima antes do fim do tempo. Em alguns modelos, 
-           como para 2 jogadores, os jogadores devem bater nas toupeiras da sua cor e, 
-           se a toupeira do meio acender com a sua cor, o jogador ganha pontos bônus.
-            O jogo é simples, estimula a concentração, a atenção e a coordenação olho-mão, 
-            sendo uma ótima forma de passar o tempo. 
-
+  <main class="container rules-page">
+    <section id="regras" class="secao rules-hero">
+      <div>
+        <h2>Regras do Jogo</h2>
+        <p>
+          O objetivo e simples: acertar as toupeiras o mais rapido possivel para construir a maior pontuacao
+          antes do tempo acabar.
         </p>
-        <p class="text">
-          <h2 class="heading">Regras detalhadas</h2>
-          <h2>O objetivo: é bater nas toupeiras que se acendem o mais rápido possível</h2>
-      <ul>
-        <li>Para 1 jogador, o objetivo é acertar as toupeiras que se acendem, com a 
-          toupeira do meio concedendo pontos bônus..</li>
-        <li>Para 2 jogadores, cada jogador deve observar apenas as suas toupeiras, e 
-          se a toupeira do meio se acender na sua cor, o jogador ganha pontos bônus. </li>
-        <li>Pontuação: A pontuação final é revelada no console quando o tempo acaba.</li>
-        <li>Duração: O jogo tem um tempo limitado e termina quando o tempo acaba.</li>
-      </ul>
+        <ul class="rules-list">
+          <li>Acerte a toupeira quando ela aparecer no buraco.</li>
+          <li>Cada acerto soma pontos e cada erro reduz seu saldo.</li>
+          <li>O cronometro e limitado, entao seja rapido e preciso.</li>
+        </ul>
       </div>
+      <img src="images/toupeira2.jpg" alt="Desenho dos jogadores" class="rules-image">
+    </section>
+
+    <section class="secao rules-grid" aria-label="Detalhes do regulamento">
+      <article class="rule-card">
+        <h3>Regras simples</h3>
+        <p>
+          Durante a partida, as toupeiras aparecem de forma aleatoria no jardim. O jogador precisa clicar nos
+          buracos corretos para marcar pontos e evitar penalidades por erros e perdas.
+        </p>
+      </article>
+
+      <article class="rule-card">
+        <h3>Objetivo</h3>
+        <p>Terminar a partida com o maior saldo possivel e registrar o resultado no ranking Top 10.</p>
+      </article>
+
+      <article class="rule-card">
+        <h3>Pontuacao e tempo</h3>
+        <ul class="rules-list compact">
+          <li>Acertos aumentam sua pontuacao.</li>
+          <li>Erros e perdidos afetam o saldo final.</li>
+          <li>A partida termina automaticamente ao fim do tempo.</li>
+        </ul>
+      </article>
     </section>
   </main>
 

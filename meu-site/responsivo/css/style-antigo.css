@@ -1,0 +1,353 @@
+/* Base */
+* { box-sizing: border-box; }
+:root{ --max:1100px; --pad:16px; --radius:10px; --bg:#f5f5f5; --text:#222; }
+html, body { margin:0; padding:0; }
+body{ font-family: system-ui, -apple-system, Arial, sans-serif; color:var(--text); background:var(--bg); line-height:1.6; }
+.container{ max-width:var(--max); margin:0 auto; padding:0 var(--pad); }
+
+/* ===== Fundo animado: “fogos” com bolinhas coloridas ===== */
+.fireworks{
+  position: fixed;
+  inset: 0;
+  z-index: 0;                /* fica atrás do conteúdo */
+  pointer-events: none;      /* não bloqueia cliques do jogo */
+  overflow: hidden;
+}
+/* Cada .burst é uma “explosão” feita com várias bolinhas
+   usando box-shadow em 8 direções */
+.burst{
+  --size: 6px;         /* tamanho do ponto base */
+  --spread: 70px;      /* raio da explosão */
+  /* paleta pastel  — azul, vermelho, amarelo, verde, lilás, laranja */
+  --c1:#3b82f6; --c2:#ef4444; --c3:#f59e0b; --c4:#22c55e; --c5:#a855f7; --c6:#fb923c;
+
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  transform: translate(-50%,-50%) scale(.2);
+  opacity: 0;
+
+  /* o truque: vários pontos ao redor usando box-shadow */
+  box-shadow:
+    0 calc(-1*var(--spread)) 0 0 var(--c1),
+    calc(.5*var(--spread)) calc(-.866*var(--spread)) 0 0 var(--c2),
+    var(--spread) 0 0 0 var(--c3),
+    calc(.5*var(--spread)) calc(.866*var(--spread)) 0 0 var(--c4),
+    0 var(--spread) 0 0 var(--c5),
+    calc(-.5*var(--spread)) calc(.866*var(--spread)) 0 0 var(--c6),
+    calc(-1*var(--spread)) 0 0 0 var(--c2),
+    calc(-.5*var(--spread)) calc(-.866*var(--spread)) 0 0 var(--c3);
+
+  /* brilho suave nos pontinhos */
+  filter: drop-shadow(0 0 4px rgba(0,0,0,.15));
+
+  animation: explode 1.8s ease-out var(--delay) infinite;
+}
+
+/* Animação da explosão */
+@keyframes explode{
+  0%   { transform: translate(-50%,-50%) scale(.2); opacity: 0; }
+  10%  { opacity: 1; }
+  60%  { transform: translate(-50%,-50%) scale(1);   opacity: 1; }
+  100% { transform: translate(-50%,-50%) scale(1.25); opacity: 0; }
+}
+
+/* IMPORTANTE: garanta que seu conteúdo fique acima do z-index:0 do fundo */
+.site-header, .site-footer, .container, .game-area { position: relative; z-index: 1; }
+
+/* Header & Footer com gradiente amarelo -> verde -> vermelho */
+.site-header,
+.site-footer{
+  background: linear-gradient(90deg, #ffd600, #25a244, #d00000);
+  color:#fff;
+}
+.site-header .container, .site-footer .container {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:14px var(--pad);
+}
+.brand{ margin:0; font-size:1.4rem; }
+.main-nav a{ color:#fff; text-decoration:none; margin-left:12px; }
+.main-nav a:hover{ text-decoration:underline; }
+
+/* Conteúdo */
+.secao{ padding:28px 0; }
+.banner img{ width:100%; height:auto; border-radius:var(--radius); display:block; }
+
+/* tabela - ainda vou fazer*/
+
+
+/* Seta (usa images/arrow-up.png) */
+.arrow{ display:inline-block; vertical-align:middle; }
+.arrow--right{ transform: rotate(90deg); }
+.arrow--small{ width:16px; height:auto; }
+.nav-arrow{ display:inline-flex; align-items:center; gap:6px; }
+
+/* (Opcional) botão/link simples se precisar reutilizar */
+.btn-link{ display:inline-block; padding:8px 14px; border-radius:6px; background:#222; color:#fff; text-decoration:none; }
+.btn-link:hover{ filter:brightness(0.9); }
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 24px auto;
+}
+
+.board {
+  background: #0b6d20;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.holes {
+  border-collapse: separate;
+  border-spacing: 80px 60px;
+}
+
+.hole-cell {
+  width: 140px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.hole {
+  display: block;
+  width: 140px;
+  height: auto;
+}
+
+.score {
+  min-width: 280px;
+  background: #c2ff7e1a;
+}
+
+.score thead th {
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.score td:first-child {
+  font-weight: bold;
+  color: #e4572e;
+}
+
+.pontuacao img {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.btn-light {
+  font-size: 1.2rem;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: white;
+  color: #e4572e;
+  font-weight: bold;
+  border: 2px solid #e4572e;
+}
+
+
+/* Placar ao lado, com legibilidade */
+.score{ min-width:320px; background:#c2ff7e1a; }
+.score thead th{ font-size:1.6rem; letter-spacing:2px; }
+.score td:first-child{ font-weight:800; color:#e4572e; }
+
+/* Utilidades de acessibilidade (cabeçalhos escondidos) */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* Se já tiver as regras das setas, mantenha estas classes */
+.arrow{ display:inline-block; vertical-align:middle; }
+.arrow--right{ transform: rotate(90deg); }
+.arrow--small{ width:16px; height:auto; }
+
+
+
+/* ===== Incrementos visuais e animações ===== */
+
+/* Cursor de martelo durante o jogo */
+
+body.hammer-cursor {
+   
+  cursor: url("../images/hammer.png") 0 0, auto;
+
+    
+  /*cursor: url("images/hammerDown2.png") 0 0, auto;*/
+
+}
+
+/* Botão START — estados e animação */
+#start {
+  font-size: 1.2rem;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 2px solid #e4572e;
+  background: #ffffff;
+  color: #e4572e;
+  font-weight: 800;
+  letter-spacing: .5px;
+  transition: transform .12s ease, box-shadow .2s ease, background .3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  cursor: pointer;
+}
+#start:hover { transform: translateY(-2px); }
+#start:active { transform: translateY(0); }
+
+#start.running {
+  background: #d00000;  /* vermelho durante o jogo */
+  border-color: #a00000;
+  color: #fff;
+}
+
+/* Avisa quando o tempo está acabando: pisca suave */
+@keyframes blink {
+  0%, 49% { filter: brightness(1); }
+  50%, 100% { filter: brightness(1.25); }
+}
+#start.almost-over {
+  animation: blink .6s linear infinite;
+}
+
+/* Células dos buracos “preparadas” para abrigar a toupeira */
+.hole-cell {
+  position: relative; /* permite posicionar a toupeira absoluta */
+  width: 140px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* A toupeira */
+.mole {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-62%); /* ajusta para ficar “dentro” do buraco */
+  width: 120px;                 /* ajuste conforme sua arte */
+  height: auto;
+  pointer-events: none;         /* clique é na célula */
+  opacity: 0;
+  transition: opacity .08s linear, transform .08s ease;
+}
+.mole.show {
+  opacity: 1;
+  transform: translate(-50%,-68%); /* sobe um pouquinho ao aparecer */
+}
+
+/* Placar (só reforço leve) */
+.score {
+  min-width: 320px;
+  background: #f4ffe6;
+  border: 2px solid #98d85b;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.05);
+}
+.score thead th {
+  padding: 6px 0;
+}
+
+/*  área deco da mascote*/
+/* Botão PARAR */
+.btn-stop{
+  font-size: 1.05rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 800;
+  border: 2px solid #444;
+  color: #fff;
+  background: #666;
+  cursor: not-allowed;
+  transition: filter .2s ease, transform .12s ease;
+}
+.btn-stop.enabled{
+  background: #222;
+  border-color: #000;
+  cursor: pointer;
+}
+.btn-stop.enabled:hover{ filter: brightness(1.1); transform: translateY(-2px); }
+.btn-stop.enabled:active{ transform: translateY(0); }
+
+/* Área da mascotinha (abaixo da tabela) */
+.mascot-area{
+  position: relative;
+  height: 220px;              /* altura reservada para a animação */
+  margin-top: 10px;
+  overflow: hidden;           /* esconde quando está fora da área */
+  /* opcional: um fundinho bem sutil */
+  background: #f9ffe8; border-radius: 8px;  
+}
+
+/* A imagem da toupeira que vai entrar em diagonal */
+.mascot-mole{
+  position: absolute;
+  bottom: 0;
+  right: -140px;              /* começa fora da área, pela direita */
+  width: 220px;
+  height: auto;
+  transform-origin: 50% 100%;
+  opacity: 0;
+
+  /* anima a cada 10s; pausa quando o jogo não está rodando */
+  animation: mascot-diagonal 10s ease-in-out infinite;
+  animation-play-state: paused; /* padrão: pausado */
+}
+
+/* Quando o jogo estiver rodando, o body recebe a classe .game-running */
+body.game-running .mascot-mole{
+  animation-play-state: running;
+}
+
+/* Keyframes: fica oculto a maior parte do tempo.
+   Entre 80% e 94% entra e sai em diagonal para a esquerda, com leve inclinação. */
+@keyframes mascot-diagonal{
+  0%, 78%{
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+    right: -140px;
+  }
+  80%{
+    opacity: 1;
+    right: -10px;
+    transform: translate(-10px, -12px) rotate(-12deg);
+  }
+  88%{
+    opacity: 1;
+    right: 65px;                       /* “pousa” um instante já visível */
+    transform: translate(-80px, -22px) rotate(-16deg);
+  }
+
+ 89%{
+    opacity: 1;
+    right: 65px;                       /* “pousa” um instante já visível */
+    transform: translate(-80px, -22px) rotate(-16deg);
+  }
+
+  90%{
+    opacity: 1;
+    right: 65px;                       /* “pousa” um instante já visível */
+    transform: translate(-80px, -22px) rotate(-16deg);
+  }
+
+  94%{
+    opacity: 0;
+    right: 200px;                      /* continua para a esquerda e some */
+    transform: translate(-220px, -34px) rotate(-18deg);
+  }
+ 
+
+  100%{
+    opacity: 0;
+    right: -140px;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
