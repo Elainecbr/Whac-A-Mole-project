@@ -27,7 +27,7 @@ Este projeto recria o jogo classico Whac-A-Mole em pagina web, com:
 
 ### Home
 
-![Home](docs/screenshots/home.png)
+<img width="1076" height="679" alt="image" src="https://github.com/user-attachments/assets/f8335763-0fa9-4e9d-a2a9-ba172d5958d0" />
 
 ### Tabuleiro
 
