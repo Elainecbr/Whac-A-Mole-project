@@ -31,11 +31,11 @@ Este projeto recria o jogo classico Whac-A-Mole em pagina web, com:
 
 ### Tabuleiro
 
-![Tabuleiro](docs/screenshots/tabuleiro.png)
+![Tabuleiro](docs/screenshots/tabuleiro.png|500)
 
 ### Recordes
 
-![Recordes](docs/screenshots/recordes.png)
+![Recordes](docs/screenshots/recordes.png|500)
 
 ## Funcionalidades
 
