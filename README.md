@@ -31,11 +31,12 @@ Este projeto recria o jogo classico Whac-A-Mole em pagina web, com:
 
 ### Tabuleiro
 
-![Tabuleiro](docs/screenshots/tabuleiro.png|500)
+<img width="1239" height="729" alt="image" src="https://github.com/user-attachments/assets/318d6662-04a7-4bcb-bd2a-7becf56cfdab" />
+
 
 ### Recordes
 
-![Recordes](docs/screenshots/recordes.png|500)
+![Recordes](docs/screenshots/recordes.png|)
 
 ## Funcionalidades
 
