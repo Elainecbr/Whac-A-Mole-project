@@ -1,0 +1,12 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="900" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE7D8"/>
+      <stop offset="1" stop-color="#E1EFF5"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1100" rx="32" fill="url(#g1)"/>
+  <circle cx="450" cy="395" r="170" fill="#F7CBB0"/>
+  <rect x="205" y="610" width="490" height="270" rx="130" fill="#D4E5EF"/>
+  <text x="450" y="975" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#374151">Substitua por sua foto</text>
+</svg>

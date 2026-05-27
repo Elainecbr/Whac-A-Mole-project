@@ -1,0 +1,6 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F8EFE1"/>
+  <circle cx="190" cy="160" r="90" fill="#E3A66E"/>
+  <path d="M0 620C250 520 420 680 670 600C860 540 1030 430 1200 520V800H0V620Z" fill="#9CC2CF"/>
+  <text x="600" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" fill="#5A4637">Criatividade</text>
+</svg>
