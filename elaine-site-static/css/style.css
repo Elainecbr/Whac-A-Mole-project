@@ -122,10 +122,24 @@ h1, h2, h3 {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
   padding: 5.5rem 0 3rem;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.78) 72%), url("../images/header-alegria.svg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 1.5rem;
@@ -214,7 +228,7 @@ h1 {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -242,6 +256,31 @@ h1 {
 
 .portfolio-item p {
   margin-top: 0;
+}
+
+.project-shot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d4dde5;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, #1e86b2, #48a6cd);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.project-link:hover {
+  filter: brightness(1.06);
 }
 
 .section a {

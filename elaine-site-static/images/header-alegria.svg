@@ -1,0 +1,47 @@
+<svg width="1600" height="760" viewBox="0 0 1600 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A9E7FF"/>
+      <stop offset="0.52" stop-color="#C8F4FF"/>
+      <stop offset="1" stop-color="#E7FBFF"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="390" x2="0" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EC6EB"/>
+      <stop offset="1" stop-color="#1F86B7"/>
+    </linearGradient>
+    <linearGradient id="sand" x1="0" y1="560" x2="1600" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE39F"/>
+      <stop offset="1" stop-color="#F7C86D"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="760" fill="url(#sky)"/>
+  <circle cx="1330" cy="124" r="74" fill="#FFD95A"/>
+  <circle cx="1330" cy="124" r="92" stroke="#FFECA8" stroke-opacity="0.8" stroke-width="16"/>
+
+  <path d="M0 360C190 338 360 404 550 378C770 347 850 292 1060 312C1260 331 1395 386 1600 352V560H0V360Z" fill="url(#sea)"/>
+  <path d="M0 430C210 398 390 463 590 444C770 426 960 365 1185 390C1348 407 1460 452 1600 438V560H0V430Z" fill="#7ED7F2" fill-opacity="0.6"/>
+
+  <path d="M0 558H1600V760H0V558Z" fill="url(#sand)"/>
+  <path d="M0 618C230 593 426 664 664 630C883 598 1002 560 1254 579C1394 589 1526 621 1600 612V760H0V618Z" fill="#F7CF80"/>
+
+  <g opacity="0.45">
+    <circle cx="220" cy="150" r="35" fill="white"/>
+    <circle cx="260" cy="138" r="42" fill="white"/>
+    <circle cx="304" cy="156" r="31" fill="white"/>
+  </g>
+  <g opacity="0.42">
+    <circle cx="530" cy="92" r="30" fill="white"/>
+    <circle cx="568" cy="82" r="36" fill="white"/>
+    <circle cx="607" cy="96" r="28" fill="white"/>
+  </g>
+
+  <path d="M123 610C168 603 194 579 214 534C230 496 241 421 268 352" stroke="#7D5B40" stroke-width="16" stroke-linecap="round"/>
+  <path d="M268 352C248 334 226 321 203 316" stroke="#3A9C58" stroke-width="12" stroke-linecap="round"/>
+  <path d="M268 352C289 334 315 323 340 319" stroke="#3A9C58" stroke-width="12" stroke-linecap="round"/>
+  <path d="M266 366C239 349 212 341 186 340" stroke="#43B867" stroke-width="10" stroke-linecap="round"/>
+  <path d="M266 366C293 351 320 344 350 346" stroke="#43B867" stroke-width="10" stroke-linecap="round"/>
+
+  <text x="800" y="205" text-anchor="middle" font-family="DM Serif Display, Georgia, serif" font-size="76" fill="#0F4661">Criatividade, tecnologia e alegria</text>
+  <text x="800" y="262" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="32" fill="#125A79">Projetos educacionais e webdesign com energia positiva</text>
+</svg>
