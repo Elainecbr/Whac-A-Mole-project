@@ -25,6 +25,7 @@
         <a href="#sobre">Sobre</a>
         <a href="#especialidades">Especialidades</a>
         <a href="#projetos">Projetos</a>
+        <a href="#aulas">Aulas</a>
         <a href="#midia">Mídia</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -43,6 +44,7 @@
           </p>
           <div class="hero-actions">
             <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+            <a href="#aulas" class="btn btn-secondary">Ver aulas</a>
             <a href="#contato" class="btn btn-secondary">Falar comigo</a>
           </div>
         </div>
@@ -96,94 +98,161 @@
     <section id="projetos" class="section reveal">
       <div class="container">
         <h2>Exemplos de projetos</h2>
-        <p>Projetos reais com print screen e links diretos.</p>
-        <div class="portfolio-grid">
-          <article class="portfolio-item">
+        <p>Projetos reais com print screen e links diretos, em formato carrossel com setas laterais.</p>
+
+        <div class="carousel" data-carousel>
+          <button class="carousel-arrow prev" type="button" aria-label="Ver projetos anteriores">&#10094;</button>
+          <div class="carousel-viewport" data-carousel-viewport>
+            <div class="carousel-track">
+              <article class="portfolio-item carousel-card">
             <img src="images/projects/karana.png" alt="Screenshot do projeto Karana Yoga Massage" class="project-shot">
             <h3>Karana Yoga Massage</h3>
             <p>Site com identidade de bem-estar, foco em serviços e conversão por contato.</p>
             <a class="project-link" href="https://karana-yoga-massage.com/" target="_blank" rel="noopener noreferrer">Visitar projeto</a>
-          </article>
+              </article>
 
-          <article class="portfolio-item">
+              <article class="portfolio-item carousel-card">
             <img src="images/projects/acodmin.png" alt="Screenshot do projeto ACODMIN" class="project-shot">
             <h3>ACODMIN</h3>
             <p>Portal institucional com comunicação comunitária e estrutura de conteúdo multilíngue.</p>
             <a class="project-link" href="https://acodmin.com/" target="_blank" rel="noopener noreferrer">Visitar projeto</a>
-          </article>
+              </article>
 
-          <article class="portfolio-item">
+              <article class="portfolio-item carousel-card">
             <img src="images/projects/priscila.png" alt="Screenshot do projeto Priscila Imperio" class="project-shot">
             <h3>Priscila Imperio</h3>
             <p>Projeto para beleza feminina com visual forte, recursos de mídia e posicionamento premium.</p>
             <a class="project-link" href="https://priscilaimperio.com.br/" target="_blank" rel="noopener noreferrer">Visitar projeto</a>
-          </article>
+              </article>
 
-          <article class="portfolio-item">
+              <article class="portfolio-item carousel-card">
             <img src="images/projects/dma.png" alt="Screenshot do projeto DMA Brasilia" class="project-shot">
             <h3>DMA Brasília</h3>
             <p>Projeto histórico com foco informativo para comunidade e famílias de diplomatas.</p>
             <a class="project-link" href="http://dma-brasilia.elaine-online.de/" target="_blank" rel="noopener noreferrer">Visitar projeto</a>
-          </article>
+              </article>
 
-          <article class="portfolio-item">
+              <article class="portfolio-item carousel-card">
             <img src="images/projects/wellness.png" alt="Screenshot do projeto Wellness Beauty und Spirit" class="project-shot">
             <h3>Wellness Beauty und Spirit</h3>
             <p>Projeto clássico da sua trajetória para modernização futura de navegação e URL.</p>
             <a class="project-link" href="https://wellnessbeautyundspirit.de/wellnessbeautyundspirit.de_-_Home.html" target="_blank" rel="noopener noreferrer">Visitar projeto</a>
-          </article>
+              </article>
+            </div>
+          </div>
+          <button class="carousel-arrow next" type="button" aria-label="Ver próximos projetos">&#10095;</button>
+          <div class="carousel-dots" aria-label="Navegação do carrossel"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="aulas" class="section reveal">
+      <div class="container">
+        <h2>Algumas aulas feitas por mim</h2>
+        <p>Seleção de aulas em vídeo no mesmo formato de cards em carrossel.</p>
+
+        <div class="carousel" data-carousel>
+          <button class="carousel-arrow prev" type="button" aria-label="Ver aulas anteriores">&#10094;</button>
+          <div class="carousel-viewport" data-carousel-viewport>
+            <div class="carousel-track">
+              <article class="video-card carousel-card">
+                <h3>Aula em vídeo 1</h3>
+                <div class="video-frame">
+                  <iframe src="https://www.youtube.com/embed/xOwYhvh76ZI" title="Aula de Robótica Educacional 1" loading="lazy" allowfullscreen></iframe>
+                </div>
+              </article>
+
+              <article class="video-card carousel-card">
+                <h3>Aula em vídeo 2</h3>
+                <div class="video-frame">
+                  <iframe src="https://www.youtube.com/embed/7xmRFb0N8eE" title="Aula de Robótica Educacional 2" loading="lazy" allowfullscreen></iframe>
+                </div>
+              </article>
+
+              <article class="video-card carousel-card">
+                <h3>Aula em vídeo 3</h3>
+                <div class="video-frame">
+                  <iframe src="https://www.youtube.com/embed/jP2GAM85d3k" title="Aula de Robótica Educacional 3" loading="lazy" allowfullscreen></iframe>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button class="carousel-arrow next" type="button" aria-label="Ver próximas aulas">&#10095;</button>
+          <div class="carousel-dots" aria-label="Navegação do carrossel"></div>
         </div>
       </div>
     </section>
 
     <section id="midia" class="section reveal">
       <div class="container">
-        <h2>Mídia e aulas em vídeo</h2>
+        <h2>Mídia e gráficos visuais</h2>
         <p>
-          Espaço preparado para sua foto profissional, imagens inspiradoras e vídeos de aulas.
+          Espaço preparado para sua foto profissional e imagens inspiradoras no mesmo conceito de cards em carrossel.
           Você pode substituir os arquivos em <strong>elaine-site-static/images</strong> sem alterar o código.
         </p>
 
-        <div class="media-grid">
-          <article class="profile-card">
-            <img src="images/profile.jpg" alt="Foto profissional de Elaine Bundscherer" class="profile-photo">
-            <h3>Sua foto profissional</h3>
-            <p>
-              Foto real da Elaine para reforçar presença profissional e identidade pessoal no portfólio.
-            </p>
-          </article>
-
-          <article class="inspiration-block">
-            <h3>Imagens inspiradoras</h3>
-            <div class="inspiration-grid">
-              <img src="images/inspiration-01-opt.jpg" alt="Aulas e planos de aula com criatividade">
-              <img src="images/inspiration-02-opt.jpg" alt="Robótica educacional com crianças e montagem">
-              <img src="images/inspiration-03-opt.jpg" alt="Criatividade e projetos maker com tecnologia">
+        <div class="profile-spotlight">
+          <article class="profile-card profile-card--compact">
+            <div class="profile-photo-wrap">
+              <img src="images/profile.jpg" alt="Foto profissional de Elaine Bundscherer" class="profile-photo">
             </div>
           </article>
+
+          <div class="profile-bio">
+            <h3>Elaine C. Bundscherer</h3>
+            <span class="profile-role">Educadora &amp; Webdesigner</span>
+            <p>
+              Sou educadora, tecnóloga e criadora de experiências de aprendizagem que realmente funcionam.
+              Com mestrado em Ciência da Computação, atuo na interseção entre educação e tecnologia —
+              um espaço cheio de possibilidades, robôs curiosos e ideias que tomam forma.
+            </p>
+            <p>
+              Acredito que aprender deve ser uma aventura. Por isso desenvolvo aulas, projetos e sites
+              que colocam as pessoas no centro: seja uma criança montando seu primeiro robô com Lego,
+              seja um empreendedor vendo seu negócio ganhar vida na web.
+            </p>
+            <p>
+              Trabalhei com metodologias STEAM, robótica educacional, Arduino, Raspberry Pi e
+              ferramentas maker em contextos reais. No webdesign, crio interfaces em HTML5, CSS,
+              WordPress e JavaScript — sempre com cuidado na usabilidade e na identidade visual.
+            </p>
+            <p>
+              Cada projeto que assumo carrega o mesmo compromisso: entregar algo que inspire,
+              que funcione bem e que conte uma história verdadeira.
+            </p>
+            <div class="profile-tags">
+              <span class="profile-tag">Robótica Educacional</span>
+              <span class="profile-tag">STEAM</span>
+              <span class="profile-tag">Webdesign</span>
+              <span class="profile-tag">Arduino &amp; Raspberry Pi</span>
+              <span class="profile-tag">Front-end</span>
+              <span class="profile-tag">WordPress</span>
+              <span class="profile-tag">Gamificação</span>
+            </div>
+          </div>
         </div>
 
-        <div class="video-grid">
-          <article class="video-card">
-            <h3>Aula em vídeo 1</h3>
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/xOwYhvh76ZI" title="Aula de Robótica Educacional 1" loading="lazy" allowfullscreen></iframe>
+        <h3 class="subsection-title">Galeria de gráficos e imagens</h3>
+        <div class="carousel" data-carousel>
+          <button class="carousel-arrow prev" type="button" aria-label="Ver imagens anteriores">&#10094;</button>
+          <div class="carousel-viewport" data-carousel-viewport>
+            <div class="carousel-track">
+              <article class="inspiration-card carousel-card">
+                <img src="images/inspiration-01-opt.jpg" alt="Aulas e planos de aula com criatividade">
+                <p>Criatividade em sala e planejamento visual.</p>
+              </article>
+              <article class="inspiration-card carousel-card">
+                <img src="images/inspiration-02-opt.jpg" alt="Robótica educacional com crianças e montagem">
+                <p>Aprendizagem com robótica e experimentação.</p>
+              </article>
+              <article class="inspiration-card carousel-card">
+                <img src="images/inspiration-03-opt.jpg" alt="Criatividade e projetos maker com tecnologia">
+                <p>Projetos maker conectando tecnologia e autoria.</p>
+              </article>
             </div>
-          </article>
-
-          <article class="video-card">
-            <h3>Aula em vídeo 2</h3>
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/7xmRFb0N8eE" title="Aula de Robótica Educacional 2" loading="lazy" allowfullscreen></iframe>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <h3>Aula em vídeo 3</h3>
-            <div class="video-frame">
-              <iframe src="https://www.youtube.com/embed/jP2GAM85d3k" title="Aula de Robótica Educacional 3" loading="lazy" allowfullscreen></iframe>
-            </div>
-          </article>
+          </div>
+          <button class="carousel-arrow next" type="button" aria-label="Ver próximas imagens">&#10095;</button>
+          <div class="carousel-dots" aria-label="Navegação da galeria de imagens"></div>
         </div>
       </div>
     </section>
